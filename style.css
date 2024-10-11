@@ -1,5 +1,5 @@
 body {
-  font-family: sans-serif;
+  font-family: font-family: "Gill Sans", sans-serif;
   margin: 0;
 }
 
@@ -24,7 +24,7 @@ body {
 }
 
 .navbar a:hover {
-  color: #000000;
+  color: #414168;
 }
 
 .content {
