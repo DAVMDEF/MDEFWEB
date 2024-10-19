@@ -54,7 +54,7 @@ body {
   background-color: black;
   color: rgb(0, 0, 0);
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   font-size: 30px;
   cursor: pointer;
@@ -71,7 +71,7 @@ body {
   background-color: transparent; /* Transparent background */
   transition: left 0.4s ease; /* Smooth sliding */
   display: flex;
-  align-items: left;
+  align-items: center;
   padding-left: 70px; /* Space to avoid overlap with the menu icon */
 }
 
