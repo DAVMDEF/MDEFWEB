@@ -110,3 +110,18 @@ footer, footer a {
   text-align: center;
   padding: 50px 0 30px 0;
 }
+
+ol {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #414168;
+}
+
+li {
+  color: #414168;
+}
+
+a {
+  color: #414168;
+  font-weight:500;
+  text-decoration: none;
+}
