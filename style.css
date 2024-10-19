@@ -54,8 +54,8 @@ body {
   background-color: black;
   color: rgb(0, 0, 0);
   display: flex;
-  justify-content: left;
-  align-items: center;
+  justify-content: center;
+  align-items: left;
   font-size: 30px;
   cursor: pointer;
   z-index: 1000;
