@@ -68,14 +68,14 @@
       <head>
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>Image Slider</title>
+          <title>Multiple Image Sliders</title>
           <style>
               /* Slider container styling */
               .slider-container {
                   position: relative;
-                  width: 100%; /* Adjust width as needed */
+                  width: 100%;
                   max-width: 100%;
-                  margin-bottom: 30px ;margin-top: 15px;
+                  margin: 30px auto;
                   overflow: hidden;
               }
       
@@ -95,9 +95,9 @@
                   position: absolute;
                   top: 50%;
                   width: 30px;
-                  height: 60px;
+                  height: 30px;
                   margin-top: -15px;
-                  color: rgb(80, 80, 80);
+                  color: rgb(50, 50, 50);
                   font-size: 18px;
                   font-weight: lighter;
                   cursor: pointer;
@@ -121,274 +121,82 @@
       </head>
       <body>
       
-          <!-- Slider container -->
-          <div class="slider-container">
-              <!-- Left arrow -->
-              <div class="arrow left" onclick="changeSlide(-1)">&#10094;</div>
-      
-              <!-- Slides -->
-              <img src="../images/term 1/living with your own ideas/prost11.jpg" class="slide active" alt="Image 1">
-              <img src="../images/term 1/living with your own ideas/prost1.jpg" class="slide" alt="Image 2">
+          <!-- Slider 1 -->
+          <div id="slider1" class="slider-container">
+              <div class="arrow left" onclick="changeSlide(-1, 'slider1')">&#10094;</div>
+              <img src="../images/term 1/living with your own ideas/prost1.jpg" class="slide active" alt="Image 1">
+              <img src="../images/term 1/living with your own ideas/prost11.jpg" class="slide" alt="Image 2">
               <img src="../images/term 1/living with your own ideas/prost12.jpg" class="slide" alt="Image 3">
+              <div class="arrow right" onclick="changeSlide(1, 'slider1')">&#10095;</div>
+          </div>
       
-              <!-- Right arrow -->
-              <div class="arrow right" onclick="changeSlide(1)">&#10095;</div>
+          <!-- Slider 2 -->
+          <div id="slider2" class="slider-container">
+              <div class="arrow left" onclick="changeSlide(-1, 'slider2')">&#10094;</div>
+              <img src="../images/term 1/living with your own ideas/prost20.jpg" class="slide active" alt="Image 4">
+              <img src="../images/term 1/living with your own ideas/prost2.jpg" class="slide" alt="Image 5">
+              <img src="../images/term 1/living with your own ideas/prost21.jpg" class="slide" alt="Image 6">
+              <img src="../images/term 1/living with your own ideas/prost22.jpg" class="slide" alt="Image 7">
+              <div class="arrow right" onclick="changeSlide(1, 'slider2')">&#10095;</div>
+          </div>
+      
+          <!-- Slider 3 -->
+          <div id="slider3" class="slider-container">
+              <div class="arrow left" onclick="changeSlide(-1, 'slider3')">&#10094;</div>
+              <img src="../images/term 1/living with your own ideas/prost3.jpg" class="slide active" alt="Image 8">
+              <img src="../images/term 1/living with your own ideas/prost30.jpg" class="slide" alt="Image 9">
+              <img src="../images/term 1/living with your own ideas/prost31.jpg" class="slide" alt="Image 10">
+              <img src="../images/term 1/living with your own ideas/prost32.jpg" class="slide" alt="Image 11">
+              <div class="arrow right" onclick="changeSlide(1, 'slider3')">&#10095;</div>
           </div>
       
           <script>
-              let currentSlide = 0;
-              const slides = document.getElementsByClassName("slide");
+              // Track the current slide index for each slider
+              let slideIndices = {
+                  slider1: 0,
+                  slider2: 0,
+                  slider3: 0
+              };
       
-              // Function to show slides
-              function showSlide(index) {
-                  // Loop back to the start or end if index goes out of bounds
-                  if (index >= slides.length) currentSlide = 0;
-                  if (index < 0) currentSlide = slides.length - 1;
+              // Function to show slides for a specific slider
+              function showSlide(sliderId, index) {
+                  const slider = document.getElementById(sliderId);
+                  const slides = slider.getElementsByClassName("slide");
       
-                  // Hide all slides
+                  // Loop back if index is out of bounds
+                  if (index >= slides.length) slideIndices[sliderId] = 0;
+                  if (index < 0) slideIndices[sliderId] = slides.length - 1;
+      
+                  // Hide all slides for the current slider
                   for (let slide of slides) {
                       slide.classList.remove("active");
                   }
       
-                  // Show the current slide
-                  slides[currentSlide].classList.add("active");
+                  // Display the current slide
+                  slides[slideIndices[sliderId]].classList.add("active");
               }
       
-              // Change slide manually with arrows
-              function changeSlide(direction) {
-                  currentSlide += direction;
-                  showSlide(currentSlide);
+              // Function to change slides in a specific direction
+              function changeSlide(direction, sliderId) {
+                  slideIndices[sliderId] += direction;
+                  showSlide(sliderId, slideIndices[sliderId]);
               }
       
-              // Automatic slide change every 3 seconds
-              setInterval(() => {
-                  currentSlide++;
-                  showSlide(currentSlide);
-              }, 3000); // 3000 ms = 3 seconds
-          </script>
-      
-      </body>
-      </html>
-        
-      
-
-      <!DOCTYPE html>
-      <html lang="en">
-      <head>
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>Image Slider</title>
-          <style>
-              /* Slider container styling */
-              .slider-container {
-                  position: relative;
-                  width: 100%; /* Adjust width as needed */
-                  max-width: 100%;
-                  margin-bottom: 30px ;margin-top: 15px;
-                  overflow: hidden;
-              }
-      
-              /* Slider images */
-              .slide {
-                  display: none;
-                  width: 100%;
-              }
-      
-              /* Active slide */
-              .active {
-                  display: block;
-              }
-      
-              /* Arrows */
-              .arrow {
-                  position: absolute;
-                  top: 50%;
-                  width: 30px;
-                  height: 60px;
-                  margin-top: -15px;
-                  color: rgb(80, 80, 80);
-                  font-size: 18px;
-                  font-weight: lighter;
-                  cursor: pointer;
-                  user-select: none;
-                  z-index: 10;
-                  background-color: rgba(255, 255, 255, 0);
-                  border-radius: 50%;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-              }
-      
-              /* Left and right arrow positions */
-              .arrow.left {
-                  left: 10px;
-              }
-              .arrow.right {
-                  right: 10px;
-              }
-          </style>
-      </head>
-      <body>
-      
-          <!-- Slider container -->
-          <div class="slider-container">
-              <!-- Left arrow -->
-              <div class="arrow left" onclick="changeSlide(-1)">&#10094;</div>
-      
-              <!-- Slides -->
-              <img src="../images/term 1/living with your own ideas/prost21.jpg" class="slide active" alt="Image 1">
-              <img src="../images/term 1/living with your own ideas/prost2.jpg" class="slide" alt="Image 2">
-              <img src="../images/term 1/living with your own ideas/prost22.jpg" class="slide" alt="Image 3">
-              <img src="../images/term 1/living with your own ideas/prost20.jpg" class="slide" alt="Image 4">
-      
-              <!-- Right arrow -->
-              <div class="arrow right" onclick="changeSlide(1)">&#10095;</div>
-          </div>
-      
-          <script>
-              currentSlide = 2;
-              slides = document.getElementsByClassName("slide");
-      
-              // Function to show slides
-              function showSlide(index) {
-                  // Loop back to the start or end if index goes out of bounds
-                  if (index >= slides.length) currentSlide = 0;
-                  if (index < 0) currentSlide = slides.length - 1;
-      
-                  // Hide all slides
-                  for (let slide of slides) {
-                      slide.classList.remove("active");
+              // Automatic slide change for each slider
+              function autoSlide() {
+                  for (let sliderId in slideIndices) {
+                      slideIndices[sliderId]++;
+                      showSlide(sliderId, slideIndices[sliderId]);
                   }
-      
-                  // Show the current slide
-                  slides[currentSlide].classList.add("active");
               }
       
-              // Change slide manually with arrows
-              function changeSlide(direction) {
-                  currentSlide += direction;
-                  showSlide(currentSlide);
-              }
-      
-              // Automatic slide change every 3 seconds
-              setInterval(() => {
-                  currentSlide++;
-                  showSlide(currentSlide);
-              }, 3000); // 3000 ms = 3 seconds
+              // Set interval for automatic sliding every 3 seconds
+              setInterval(autoSlide, 3000);
           </script>
       
       </body>
       </html>
-
-
-
-      <!DOCTYPE html>
-      <html lang="en">
-      <head>
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>Image Slider</title>
-          <style>
-              /* Slider container styling */
-              .slider-container {
-                  position: relative;
-                  width: 100%; /* Adjust width as needed */
-                  max-width: 100%;
-                  margin-bottom: 30px ;margin-top: 15px;
-                  overflow: hidden;
-              }
       
-              /* Slider images */
-              .slide {
-                  display: none;
-                  width: 100%;
-              }
-      
-              /* Active slide */
-              .active {
-                  display: block;
-              }
-      
-              /* Arrows */
-              .arrow {
-                  position: absolute;
-                  top: 50%;
-                  width: 30px;
-                  height: 60px;
-                  margin-top: -15px;
-                  color: rgb(80, 80, 80);
-                  font-size: 18px;
-                  font-weight: lighter;
-                  cursor: pointer;
-                  user-select: none;
-                  z-index: 10;
-                  background-color: rgba(255, 255, 255, 0);
-                  border-radius: 50%;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-              }
-      
-              /* Left and right arrow positions */
-              .arrow.left {
-                  left: 10px;
-              }
-              .arrow.right {
-                  right: 10px;
-              }
-          </style>
-      </head>
-      <body>
-      
-          <!-- Slider container -->
-          <div class="slider-container">
-              <!-- Left arrow -->
-              <div class="arrow left" onclick="changeSlide(-1)">&#10094;</div>
-      
-              <!-- Slides -->
-              <img src="../images/term 1/living with your own ideas/prost3.jpg" class="slide active" alt="Image 1">
-              <img src="../images/term 1/living with your own ideas/prost30.jpg" class="slide" alt="Image 2">
-              <img src="../images/term 1/living with your own ideas/prost31.jpg" class="slide" alt="Image 3">
-              <img src="../images/term 1/living with your own ideas/prost32.jpg" class="slide" alt="Image 4">
-      
-              <!-- Right arrow -->
-              <div class="arrow right" onclick="changeSlide(1)">&#10095;</div>
-          </div>
-      
-          <script>
-              currentSlide = 3;
-              slides = document.getElementsByClassName("slide");
-      
-              // Function to show slides
-              function showSlide(index) {
-                  // Loop back to the start or end if index goes out of bounds
-                  if (index >= slides.length) currentSlide = 0;
-                  if (index < 0) currentSlide = slides.length - 1;
-      
-                  // Hide all slides
-                  for (let slide of slides) {
-                      slide.classList.remove("active");
-                  }
-      
-                  // Show the current slide
-                  slides[currentSlide].classList.add("active");
-              }
-      
-              // Change slide manually with arrows
-              function changeSlide(direction) {
-                  currentSlide += direction;
-                  showSlide(currentSlide);
-              }
-      
-              // Automatic slide change every 3 seconds
-              setInterval(() => {
-                  currentSlide++;
-                  showSlide(currentSlide);
-              }, 3000); // 3000 ms = 3 seconds
-          </script>
-      
-      </body>
-      </html>
 
 
         <img src="../images/term 1/machine paradox/machine paradox.png" alt="train tracks" width="100%"/>
