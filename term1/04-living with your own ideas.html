@@ -136,34 +136,34 @@
           </div>
       
           <script>
-              let currentSlide1 = 0;
-              const slides1 = document.getElementsByClassName("slide");
+              let currentSlide = 0;
+              const slides = document.getElementsByClassName("slide");
       
               // Function to show slides
               function showSlide(index) {
                   // Loop back to the start or end if index goes out of bounds
-                  if (index >= slides.length) currentSlide1 = 0;
-                  if (index < 0) currentSlide1 = slides.length - 1;
+                  if (index >= slides.length) currentSlide = 0;
+                  if (index < 0) currentSlide = slides.length - 1;
       
                   // Hide all slides
                   for (let slide of slides) {
-                      slide1.classList.remove("active");
+                      slide.classList.remove("active");
                   }
       
                   // Show the current slide
-                  slides[currentSlide1].classList.add("active");
+                  slides[currentSlide].classList.add("active");
               }
       
               // Change slide manually with arrows
               function changeSlide(direction) {
-                  currentSlide1 += direction;
-                  showSlide(currentSlide1);
+                  currentSlide += direction;
+                  showSlide(currentSlide);
               }
       
               // Automatic slide change every 3 seconds
               setInterval(() => {
-                  currentSlide1++;
-                  showSlide(currentSlide1);
+                  currentSlide++;
+                  showSlide(currentSlide);
               }, 3000); // 3000 ms = 3 seconds
           </script>
       
@@ -246,8 +246,8 @@
           </div>
       
           <script>
-              let currentSlide2 = 0;
-              const slides2 = document.getElementsByClassName("slide");
+              currentSlide = 2;
+              slides = document.getElementsByClassName("slide");
       
               // Function to show slides
               function showSlide(index) {
@@ -356,8 +356,8 @@
           </div>
       
           <script>
-              let currentSlide3 = 0;
-              const slides3 = document.getElementsByClassName("slide");
+              currentSlide = 3;
+              slides = document.getElementsByClassName("slide");
       
               // Function to show slides
               function showSlide(index) {
