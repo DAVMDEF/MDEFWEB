@@ -43,7 +43,7 @@ body {
   position: fixed;
   top: 20px;
   left: 20px;
-  z-index: 1000px;
+  z-index: 10;
 }
 
 /* Hamburger Icon - Positioned at the top left */
