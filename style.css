@@ -52,11 +52,11 @@ body {
   height: 50px;
   border-radius: 50%; /* Circular icon */
   background-color: black;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
+  font-size: 15px;
   cursor: pointer;
   z-index: 1000;
 }
