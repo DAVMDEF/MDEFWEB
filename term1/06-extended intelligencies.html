@@ -50,221 +50,23 @@
    
     <div class="content">
 
-      <h1 style="margin-bottom: 10px;">4. living with your own ideas</h1>
+      <h1 style="margin-bottom: 10px;">6. extended intelligences</h1>
 
       <h2 style="margin-bottom: 21px;">experience</h2>
 
-      <p style="display: block; width: 100%; margin: 0 auto; margin-bottom: 45px; margin-top: 21px;">The seminar is divided into three main conceptual axles. Each explores a different approach to 1pp (first person perspective) and rapid prototyping focusing on a critical view of contemporary problems or situations.</p>
+      <p style="display: block; width: 100%; margin: 0 auto; margin-bottom: 45px; margin-top: 21px;">The seminar explored in a very interesting way the industry around AI and how it impacts our society and our world in general before getting into a technical and propositional stage. <br>
+        <br>
+        This was developed in two modules. The first compiled a large amount of theory in a very short time span. From a personal perspective this was a very insightful approach to the novel technology and the correct way to tackle it before actually understanding how to work with it. The theoretical section of the seminar framed the technology as it actually is. A set of tools of great capability but tools nevertheless and most importantly, a set of tools that have an immense impact, be it environmental, social, etc. It may be commonly understood that the fact that this is a digital technology doesn't mean it does not carry an environmental footprint as it requires infrastructure and energy consumption. What may not be as commonly understood is the scale of this infrastructure and energy consumption. It is important to generate awareness of this reality as a first step to implementing this set of tools in any industry. 
+        </p>
 
-      <!DOCTYPE html>
-      <html lang="en">
-      <head>
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>Multiple Image Sliders</title>
-          <style>
-              /* Slider container styling */
-              .slider-container {
-                  position: relative;
-                  z-index: 1;
-                  width: 100%;
-                  max-width: 100%;
-                  margin: 30px auto;
-                  overflow: hidden;
-              }
-      
-              /* Slider images */
-              .slide {
-                  display: none;
-                  width: 100%;
-              }
-      
-              /* Active slide */
-              .active {
-                  display: block;
-              }
-      
-              /* Arrows */
-              .arrow {
-                  position: absolute;
-                  top: 50%;
-                  width: 30px;
-                  height: 30px;
-                  margin-top: -15px;
-                  color: rgb(50, 50, 50);
-                  font-size: 18px;
-                  font-weight: lighter;
-                  cursor: pointer;
-                  user-select: none;
-                  z-index: 10;
-                  background-color: rgba(255, 255, 255, 0);
-                  border-radius: 50%;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-              }
-      
-              /* Left and right arrow positions */
-              .arrow.left {
-                  left: 10px;
-              }
-              .arrow.right {
-                  right: 10px;
-              }
-          </style>
-      </head>
-      <body>
-      
-          <script>
-              // Track the current slide index for each slider
-              let slideIndices = {
-                  slider1: 0,
-                  slider2: 0,
-                  slider3: 0
-              };
-      
-              // Function to show slides for a specific slider
-              function showSlide(sliderId, index) {
-                  const slider = document.getElementById(sliderId);
-                  const slides = slider.getElementsByClassName("slide");
-      
-                  // Loop back if index is out of bounds
-                  if (index >= slides.length) slideIndices[sliderId] = 0;
-                  if (index < 0) slideIndices[sliderId] = slides.length - 1;
-      
-                  // Hide all slides for the current slider
-                  for (let slide of slides) {
-                      slide.classList.remove("active");
-                  }
-      
-                  // Display the current slide
-                  slides[slideIndices[sliderId]].classList.add("active");
-              }
-      
-              // Function to change slides in a specific direction
-              function changeSlide(direction, sliderId) {
-                  slideIndices[sliderId] += direction;
-                  showSlide(sliderId, slideIndices[sliderId]);
-              }
-      
-              // Automatic slide change for each slider
-              function autoSlide() {
-                  for (let sliderId in slideIndices) {
-                      slideIndices[sliderId]++;
-                      showSlide(sliderId, slideIndices[sliderId]);
-                  }
-              }
-      
-              // Set interval for automatic sliding every 3 seconds
-              setInterval(autoSlide, 3000);
-          </script>
-      
-      </body>
-      </html>
-      
-
-      <!DOCTYPE html>
-      <html lang="en">
-      <head>
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>Video Upload</title>
-      </head>
-      <body>
-      
-        <h2 style="margin-bottom: 6px; margin-top: 45px;">prosthesis 1 . to become the best version of yourself</h2>
-        <p style="margin-bottom: 30px;">forced interaction / full focus</p>
-        <p style="display: block; width: 100%; margin: 0 auto; margin-bottom: 15px; margin-top: 21px;">The first conceptual axis explores the idea of how we as a species have developed the ability to modify ourselves in different levels, be it psychological or physical, focusing on the way we add or remove things to or from ourselves in order to satisfy our personal idea of health, beauty, etc. and the role that plays the notion of being an “all natural” being. This takes particular relevance when talking about cosmetic surgery for example, and is very interesting to analyze if this criteria is actually something to take into consideration when it comes to making a life decision. </p>
-        <p style="display: block; width: 100%; margin: 0 auto; margin-bottom: 15px; margin-top: 21px;">From a personal point of view, it's just a label. When it comes to physical alterations, whatever the motive might be, a much more relevant criteria is the physiological state of the individual and whether this alteration would help or not achieve the desired outcome.</p>
-        <!-- Slider 1 -->
-        <div id="slider1" class="slider-container">
-            <div class="arrow left" onclick="changeSlide(-1, 'slider1')">&#10094;</div>
-            <img src="../images/term 1/living with your own ideas/prost1.jpg" class="slide active" alt="Image 1">
-            <img src="../images/term 1/living with your own ideas/prost11.jpg" class="slide" alt="Image 2">
-            <img src="../images/term 1/living with your own ideas/prost12.jpg" class="slide" alt="Image 3">
-            <div class="arrow right" onclick="changeSlide(1, 'slider1')">&#10095;</div>
-        </div>
-
-        <p style="display: block; width: 100%; margin: 0 auto; margin-bottom: 15px; margin-top: 21px;">The activity develops particularly around the things that we add to ourselves, be that by necessity or by choice. It is developed by defining an attribute the user thinks can enhance its personal perception. Since, for this set of activities, the user is the designer it allows an introspective approach and allows for a very personal view of a necessity and how to satisfy it taking into account the probability of actually using it. This does not limit the exercise, on the contrary it allows for full exploration of the possibilities as the user and the designer have the same level of commitment to the outcome.</p>
-
-        <p style="display: block; width: 100%; margin: 0 auto; margin-bottom: 15px; margin-top: 21px;">For this particular axis of the seminar, the designer chose to enhance at some level a psychological aspect of himself. From his personality.</p>
-
-        <p style="display: block; width: 100%; margin: 0 auto; margin-bottom: 15px; margin-top: 21px;">The prosthesis is designed to force the user to interact with people by forcefully engaging in a very invasive way to anyone in his surroundings. By attracting so much attention and almost invading the other individual’s personal space the user has to engage in conversation. Once this is achieved, the second function of the prosthesis is noticeable as it forces the user to focus on the interlocutor. </p>
-
-        
-          <!-- Video element with controls -->
-          <video width="600" controls style="display: block; margin: 0 auto;">
-              <source src="../images/term 1/living with your own ideas/prost1vid1.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-          </video>
+        <img src="../images/term 1/extended intelligences/intro.png" alt="front" width="100%"/>
      
-          <!-- Video element with controls -->
-          <video width="600" controls style="display: block; margin: 0 auto;">
-            <source src="../images/term 1/living with your own ideas/prost1vid2.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-         
-        <p style="display: block; width: 100%; margin: 0 auto; margin-bottom: 15px; margin-top: 21px;">This prosthesis basically explores the notion of unwillingly getting out of one's social comfort zone and actually engaging in a meaningful interaction.</p> 
 
-        <h2 style="margin-bottom: 6px; margin-top: 45px;">prosthesis 2 . to become something else </h2>
-        <p style="margin-bottom: 30px;">rat wannabe</p>
-        <p style="display: block; width: 100%; margin: 0 auto; margin-bottom: 15px; margin-top: 21px;">The second conceptual axis of the seminar is explored under the idea of becoming something else rather than a human being, be it an object or any other living species. </p>
 
-          <!-- Slider 2 -->
-          <div id="slider2" class="slider-container">
-            <div class="arrow left" onclick="changeSlide(-1, 'slider2')">&#10094;</div>
-            <img src="../images/term 1/living with your own ideas/prost20.jpg" class="slide active" alt="Image 4">
-            <img src="../images/term 1/living with your own ideas/prost2.jpg" class="slide" alt="Image 5">
-            <img src="../images/term 1/living with your own ideas/prost21.jpg" class="slide" alt="Image 6">
-            <img src="../images/term 1/living with your own ideas/prost22.jpg" class="slide" alt="Image 7">
-            <div class="arrow right" onclick="changeSlide(1, 'slider2')">&#10095;</div>
-        </div>
-
-        <p style="display: block; width: 100%; margin: 0 auto; margin-bottom: 15px; margin-top: 21px;">This exercise was framed by the work of british designer Thomas Thwaites and particularly his GoatMan project. The main criteria for the designer is to identify a reason in his current life situation that makes it justifiable to become something else and through that notion to develop a prosthesis that aids that incarnation. </p>
-        <p style="display: block; width: 100%; margin: 0 auto; margin-bottom: 15px; margin-top: 21px;">In this case the designer opted for a parallel approach to the seminar by taking the main subject of interest explored in the Design Studio seminar, particularly on the personal Design Space being developed in this class. This subject is a particular setting, and this setting is the public space. The streets. </p>
-        <p style="display: block; width: 100%; margin: 0 auto; margin-bottom: 15px; margin-top: 21px;">In an effort to gain further understanding of the dynamics carried out in this area of interest, the designer decided to become probably the creature that best knows the streets and could actually give a different perspective of the environment. A rat.</p>
-        
-         <!-- Video element with controls -->
-         <video width="600" controls style="display: block; margin: 0 auto;">
-            <source src="../images/term 1/living with your own ideas/prost2vid1.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    
-        <p style="display: block; width: 100%; margin: 0 auto; margin-bottom: 15px; margin-top: 21px;">This particular prosthesis became a mutation of the previous by using the already limited vision provided and adding a “sound magnifier” that also acts as a touch sensor for immediate contact since peripheral eyesight has been eliminated. 
-        </p>
-        <p style="display: block; width: 100%; margin: 0 auto; margin-bottom: 15px; margin-top: 21px;">This prosthesis was thought as a navigation aid and while maintaining full focus on particular aspects. Also works as a people repellent which goes with the rat theme. </p>
-
-        <h2 style="margin-bottom: 6px; margin-top: 45px;">prosthesis 3 . to judge / to be judged</h2>
-        <p style="margin-bottom: 30px;">the opportunist</p>
-        <p style="display: block; width: 100%; margin: 0 auto; margin-bottom: 15px; margin-top: 21px;">The third and final conceptual axis is developed in a way that forces the designer to have a critical and introspective analysis. From a personal standing, this was the most stimulative activity of the seminar and a very satisfying way to conclude the activity.
-        </p>
-        
-        <!-- Slider 3 -->
-        <div id="slider3" class="slider-container">
-            <div class="arrow left" onclick="changeSlide(-1, 'slider3')">&#10094;</div>
-            <img src="../images/term 1/living with your own ideas/prost3.jpg" class="slide active" alt="Image 8">
-            <img src="../images/term 1/living with your own ideas/prost30.jpg" class="slide" alt="Image 9">
-            <img src="../images/term 1/living with your own ideas/prost31.jpg" class="slide" alt="Image 10">
-            <img src="../images/term 1/living with your own ideas/prost32.jpg" class="slide" alt="Image 11">
-            <div class="arrow right" onclick="changeSlide(1, 'slider3')">&#10095;</div>
-        </div>
-
-        <p style="display: block; width: 100%; margin: 0 auto; margin-bottom: 15px; margin-top: 21px;">The framing for this last section was a series of art projects that mainly found a way to manipulate judgment inflicted on them by deliberately exposing themselves to different public monitoring systems, projecting an unconventional or exaggerated behavior towards the situation.</p>
-        <p style="display: block; width: 100%; margin: 0 auto; margin-bottom: 15px; margin-top: 21px;">In this context, the prompt for the activity was free roam for an hour to project a deliberate version of oneself in the way one would like to be judged.</p>
-        <p style="display: block; width: 100%; margin: 0 auto; margin-bottom: 15px; margin-top: 21px;">To achieve this outcome and have a point of reference, the class was divided into two groups. The first would act as a subject (the judged) the second would act as a detective or unanimous follower (the jury). This roll play would be exchanged and randomized for a second hour.</p>
-        <p style="display: block; width: 100%; margin: 0 auto; margin-bottom: 15px; margin-top: 21px;">Lastly, the designer had to produce one las prosthesis. One that would aid in projecting this version of oneself.</p>
-        <p style="display: block; width: 100%; margin: 0 auto; margin-bottom: 15px; margin-top: 21px;">The prosthesis designed for this activity consisted of an element the user would strap to his back and carry it around. A sort of backpack </p>
-        <p style="display: block; width: 100%; margin: 0 auto; margin-bottom: 15px; margin-top: 21px;">The image the designer wanted to project about himself was that of someone who can take advantage of any situation. An opportunist. A person who seems lost and clumsy but knows what he wants. Lost but motivated. Someone who doesn't really care if it looks funny as long as he knows what he is doing. Someone who somehow knows where he is going and above all wants to enjoy life.  Poetic right?</p>
-        <p style="display: block; width: 100%; margin: 0 auto; margin-bottom: 15px; margin-top: 21px;">This approach might become evident in the following video. </p>
-
-         <!-- Video element with controls -->
-         <video width="600" controls style="display: block; margin: 0 auto;">
-            <source src="../images/term 1/living with your own ideas/prost3vid.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    
-      </body>
-      </html>
-      
-
-       
+        <p style="display: block; width: 100%; margin: 0 auto; margin-bottom: 45px; margin-top: 21px;">personal reflection<br>
+            <br>
+            I find it intriguing that AI has such a huge impact not only in a technology-driven-industry way but most of all in the way people have incorporated it as a standard tool for even the most irrelevant and mundane everyday “inquiries”. It is amazing to me the ability that we as a society have this capacity to interact with something that we don't quite understand, and no to say that it is mystified (which it broadly is) but in the sense that most of us don't know how it works, the process it takes to deliver what we ask of it and all the infrastructure, resources and people behind it. We as a community have come to the point of preferring to be a part of the trend as quickly as possible, no questions asked. Not even bothering to ask what this is doing. That says a lot about how we drive our societies and even more our personal lives. I find it lazy and disappointing to just accept and partake in an activity that generates so much controversy without hesitation but worst of all, knowing that is not as transparent as it seems. 
+            We are very quick to criticize the use and abuse of certain products, unless it makes our lives a little easier. Then it's ok. Then it's being part of the industry. And in a way, it is. <br>
+            <br>
+            This being said, I do believe it is a very young technology (relatively speaking as we have learned) and it has to develop not only in the technical frame but in the regulatory frame. And for that end I think it is much better that it starts making its way into the academy as soon as possible so it doesn't degenerate as quickly as the mainstream. It is a powerful tool that can bring as incredible benefits as a society if it is developed as a tool, not a commercial product. 
+            </p>
