@@ -67,7 +67,7 @@ body {
   top: 0;
   left: -100%;  /* Hide off the left side of the screen */
   width: 60%;  /* Full width of the screen */
-  height: 60px; /* Horizontal navbar */
+  height: 66px; /* Horizontal navbar */
   background-color: transparent; /* Transparent background */
   transition: left 0.9s ease; /* Smooth sliding */
   display: flex;
@@ -89,7 +89,7 @@ body {
 }
 
 .navbar-inner a:hover {
-  color: gray; /* Change color on hover */
+  color: rgb(255, 0, 0); /* Change color on hover */
 }
 
 /* Hover Effect for the whole container */
