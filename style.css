@@ -90,6 +90,7 @@ body {
 
 .navbar-inner a:hover {
   color: rgb(255, 0, 0); /* Change color on hover */
+  font-size: x-large ;
 }
 
 /* Hover Effect for the whole container */
