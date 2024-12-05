@@ -66,10 +66,10 @@ body {
   position: fixed;
   top: 0;
   left: -100%;  /* Hide off the left side of the screen */
-  width: 65%;  /* Full width of the screen */
+  width: 75%;  /* Full width of the screen */
   height: 60px; /* Horizontal navbar */
   background-color: transparent; /* Transparent background */
-  transition: left 0.4s ease; /* Smooth sliding */
+  transition: left 0.9s ease; /* Smooth sliding */
   display: flex;
   align-items: center;
   padding-left: 70px; /* Space to avoid overlap with the menu icon */
