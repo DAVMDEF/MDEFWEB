@@ -22,6 +22,44 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embeddable Frame with Redirect</title>
+    <style>
+        /* Style the iframe container */
+        .clickable-frame {
+            position: relative;
+            width: 100%; /* Set the size of the frame */
+            height: 600px;
+            cursor: pointer; /* Indicates it's clickable */
+            border: 2px solid #dddddd00;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        /* Style the iframe */
+        .clickable-frame iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Overlay to capture clicks */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10; /* Ensure it's above the iframe */
+        }
+    </style>
+</head>
+
+
   <body>
   
       <!-- Menu Container for both icon and menu -->
@@ -80,7 +118,26 @@
       <p>Talking about a specific project I am proud of.</p>
 
 
-      <iframe width="100%" height="450" src="https://davidgranizoc.wixstudio.com/davidgdiseno" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
+      
+<body>
+
+    <div class="clickable-frame" onclick="redirect()">
+        <!-- The iframe displays the embedded page -->
+        <iframe src="https://davidgranizoc.wixstudio.com/davidgdiseno"></iframe>
+        <!-- Overlay to capture clicks -->
+        <div class="overlay"></div>
+    </div>
+
+    <script>
+        function redirect() {
+            // Redirect the user when the frame is clicked
+            window.location.href = "https://davidgranizoc.wixstudio.com/davidgdiseno";
+        }
+    </script>
+
+</body>
+</html>
+
 
 
     </div>
