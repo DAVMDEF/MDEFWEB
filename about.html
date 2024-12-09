@@ -33,7 +33,7 @@
         .clickable-frame {
             position: relative;
             width: 100%; /* Set the size of the frame */
-            height: 600px;
+            height: 300px;
             cursor: pointer; /* Indicates it's clickable */
             border: 2px solid #dddddd00;
             border-radius: 8px;
@@ -58,7 +58,6 @@
         }
     </style>
 </head>
-
 
   <body>
   
@@ -115,31 +114,30 @@
 
       <h3>Project A</h3>
 
-      <p>Talking about a specific project I am proud of.</p>
+      <p>Talking about a specific project I am proud of.<br>
+      <br>
+    </p>
 
 
+      <body>
+
+        <div class="clickable-frame" onclick="redirect()">
+            <!-- The iframe displays the embedded page -->
+            <iframe src="https://davidgranizoc.wixstudio.com/davidgdiseno"></iframe>
+            <!-- Overlay to capture clicks -->
+            <div class="overlay"></div>
+        </div>
+    
+        <script>
+            function redirect() {
+                // Open the page in a new tab
+                window.open("https://davidgranizoc.wixstudio.com/davidgdiseno", "_blank");
+            }
+        </script>
+    
+    </body>
+    </html>
       
-<body>
-
-    <div class="clickable-frame" onclick="redirect()">
-        <!-- The iframe displays the embedded page -->
-        <iframe src="https://davidgranizoc.wixstudio.com/davidgdiseno"></iframe>
-        <!-- Overlay to capture clicks -->
-        <div class="overlay"></div>
-    </div>
-
-    <script>
-        function redirect() {
-            // Redirect the user when the frame is clicked
-            window.location.href = "https://davidgranizoc.wixstudio.com/davidgdiseno";
-        }
-    </script>
-
-</body>
-</html>
-
-
-
     </div>
 
     <img style="margin-bottom: 30px; margin-top: 30px;" src="images/about end.JPG" alt="Photo of david" width="100%" />
