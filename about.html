@@ -61,6 +61,9 @@
     </style>
 </head>
 
+
+
+
   <body>
   
       <!-- Menu Container for both icon and menu -->
@@ -122,10 +125,142 @@
 
       <h3 style="margin-bottom: 21px; margin-top: 30px;">don fabi / bipedestador</h3>
 
-      <p>bipedestador <br>
+      <img style="margin-bottom: 30px; margin-top: 0px;" src="images/about + don fabi/7.jpg" width="100%" />
+
+      <p>the section showcases half of a two part project developed within the mentioned factory but as a kind of side job.<br> 
+        <br>
+        it consists of two assistive products developed by request for don fabian, specifically for his son, who suffered severe neurological trauma leaving him in a vegetative state, due to a car accident.<br>
+        <br>
+        don fabian is an employee at the factory and a man of scarce resources.<br>
+        <br>
+    </p>
+
+    <img style="margin-bottom: 30px; margin-top: 0px;" src="images/about + don fabi/1 intro.jpg" width="100%" />
+
+    <p>the request was to build a stander that would serve as an aid for the user to be able to receive adequate physiotherapy at home.<br> 
+      <br>
+      the main purpose of this assistive product was to allow the user to go from a lying position to a standing position. additionally, the product had to allow the patient to be transported around the house.<br>
       <br>
     </p>
 
+    <!DOCTYPE html>
+      <html lang="en">
+      <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Multiple Image Sliders</title>
+          <style>
+              /* Slider container styling */
+              .slider-container {
+                  position: relative;
+                  z-index: 1;
+                  width: 100%;
+                  max-width: 100%;
+                  margin: 30px auto;
+                  overflow: hidden;
+              }
+      
+              /* Slider images */
+              .slide {
+                  display: none;
+                  width: 100%;
+              }
+      
+              /* Active slide */
+              .active {
+                  display: block;
+              }
+      
+              /* Arrows */
+              .arrow {
+                  position: absolute;
+                  top: 50%;
+                  width: 30px;
+                  height: 30px;
+                  margin-top: -15px;
+                  color: rgb(255, 255, 255);
+                  font-size: 30px;
+                  font-weight: lighter;
+                  cursor: pointer;
+                  user-select: none;
+                  z-index: 10;
+                  background-color: rgba(255, 255, 255, 0);
+                  border-radius: 50%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+              }
+      
+              /* Left and right arrow positions */
+              .arrow.left {
+                  left: 10px;
+              }
+              .arrow.right {
+                  right: 10px;
+              }
+          </style>
+      </head>
+      <body>
+      
+          <script>
+              // Track the current slide index for each slider
+              let slideIndices = {
+                  slider1: 0,
+                  slider2: 0,
+                  slider3: 0
+              };
+      
+              // Function to show slides for a specific slider
+              function showSlide(sliderId, index) {
+                  const slider = document.getElementById(sliderId);
+                  const slides = slider.getElementsByClassName("slide");
+      
+                  // Loop back if index is out of bounds
+                  if (index >= slides.length) slideIndices[sliderId] = 0;
+                  if (index < 0) slideIndices[sliderId] = slides.length - 1;
+      
+                  // Hide all slides for the current slider
+                  for (let slide of slides) {
+                      slide.classList.remove("active");
+                  }
+      
+                  // Display the current slide
+                  slides[slideIndices[sliderId]].classList.add("active");
+              }
+      
+              // Function to change slides in a specific direction
+              function changeSlide(direction, sliderId) {
+                  slideIndices[sliderId] += direction;
+                  showSlide(sliderId, slideIndices[sliderId]);
+              }
+      
+              // Automatic slide change for each slider
+              function autoSlide() {
+                  for (let sliderId in slideIndices) {
+                      slideIndices[sliderId]++;
+                      showSlide(sliderId, slideIndices[sliderId]);
+                  }
+              }
+      
+              // Set interval for automatic sliding every 3 seconds
+              setInterval(autoSlide, 3000);
+          </script>
+      
+      </body>
+      </html>
+
+      <!-- Slider 1 -->
+      <div id="slider1" class="slider-container">
+        <div class="arrow left" onclick="changeSlide(-1, 'slider1')">&#10094;</div>
+        <img src="../images/about + don fabi/1.jpg" class="slide active" alt="Image 1">
+        <img src="../images/about + don fabi/2.jpg" class="slide" alt="Image 2">
+        <img src="../images/about + don fabi/3.jpg" class="slide" alt="Image 3">
+        <img src="../images/about + don fabi/5.jpg" class="slide" alt="Image 5">
+        <img src="../images/about + don fabi/6.jpg" class="slide" alt="Image 6">
+        <img src="../images/about + don fabi/9.jpg" class="slide" alt="Image 9">
+        <img src="../images/about + don fabi/10.jpg" class="slide" alt="Image 10">
+        <div class="arrow right" onclick="changeSlide(1, 'slider1')">&#10095;</div>
+    </div>
 
       <body>
 
