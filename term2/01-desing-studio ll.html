@@ -79,6 +79,7 @@
             width: 100%;
             max-width: auto;
             margin: auto;
+            margin-bottom: 21px;
             overflow: hidden;
             border-radius: 0px;
             box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2);
@@ -148,7 +149,7 @@
       
       <p style="margin-bottom: 21px;">2. location </p>
 
-      <img style="margin-bottom: 21px;" src="../images/term 2/design studio ll/drift path.png" alt="front" width="60%"/>
+      <img style="margin-bottom: 21px;" src="../images/term 2/design studio ll/drift path.png" alt="front" width="45%"/>
 
 <body>
 
@@ -179,29 +180,48 @@
     <script>
         let currentSlide = 0;
         const slides = document.getElementsByClassName("slide");
-
+        let slideInterval;
+    
         function showSlide(index) {
             if (index >= slides.length) currentSlide = 0;
             if (index < 0) currentSlide = slides.length - 1;
-
+    
             for (let slide of slides) {
                 slide.classList.remove("active");
             }
-
+    
             slides[currentSlide].classList.add("active");
         }
-
+    
         function changeSlide(direction) {
             currentSlide += direction;
             showSlide(currentSlide);
         }
-
-        // Auto-slide every second
-        setInterval(() => {
-            currentSlide++;
-            showSlide(currentSlide);
-        }, 1000); // 1000ms = 1 second
+    
+        function startSlider() {
+            slideInterval = setInterval(() => {
+                currentSlide++;
+                showSlide(currentSlide);
+            }, 1000); // 1000ms = 1 second
+        }
+    
+        function stopSlider() {
+            clearInterval(slideInterval);
+        }
+    
+        // Start the slider when the page loads
+        startSlider();
+    
+        // Pause on hover
+        const sliderContainer = document.querySelector(".slider-container");
+        sliderContainer.addEventListener("mouseenter", stopSlider);
+        sliderContainer.addEventListener("mouseleave", startSlider);
     </script>
+    
+
+<p style="margin-bottom: 21px;">3. engage </p>
+
+
 
 </body>
 <!-- deberia ser slider esto -->
