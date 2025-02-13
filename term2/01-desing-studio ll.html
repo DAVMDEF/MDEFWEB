@@ -66,7 +66,68 @@
       </style>
   </head>
   
-  
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <style>
+        /* Slider Container */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: auto;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 0px;
+            box-shadow: 0 0px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Slides */
+        .slide {
+            display: none;
+            width: 100%;
+        }
+
+        /* Active Slide */
+        .active {
+            display: block;
+        }
+
+        /* Arrows */
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            color: rgb(255, 255, 255);
+            font-size: 24px;
+            font-weight: lighter;
+            cursor: pointer;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Arrow Positions */
+        .arrow.left {
+            left: 10px;
+        }
+
+        .arrow.right {
+            right: 10px;
+        }
+    </style>
+</head>
+
+</html>
+
+
 
   <body>
     
@@ -97,13 +158,58 @@
 
 </body>
 </html>
+<body>
 
+    <!-- Slider Container -->
+    <div class="slider-container">
+        <!-- Left Arrow -->
+        <div class="arrow left" onclick="changeSlide(-1)">&#10094;</div>
+
+        <!-- Images -->
+        <img src="../images/term 2/design studio ll/DSII veggie patch 2.jpg" class="slide active" alt="Slide 1">
+        <img src="../images/term 2/design studio ll/DSII veggie patch 1.jpg" class="slide" alt="Slide 2">
+        <img src="../images/term 2/design studio ll/DSII veggie patch 4.jpg" class="slide" alt="Slide 3">
+        <img src="../images/term 2/design studio ll/DSII veggie patch 5.jpg" class="slide" alt="Slide 4">
+        <img src="../images/term 2/design studio ll/DSII veggie patch 3.jpg" class="slide" alt="Slide 5">
+
+        <!-- Right Arrow -->
+        <div class="arrow right" onclick="changeSlide(1)">&#10095;</div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.getElementsByClassName("slide");
+
+        function showSlide(index) {
+            if (index >= slides.length) currentSlide = 0;
+            if (index < 0) currentSlide = slides.length - 1;
+
+            for (let slide of slides) {
+                slide.classList.remove("active");
+            }
+
+            slides[currentSlide].classList.add("active");
+        }
+
+        function changeSlide(direction) {
+            currentSlide += direction;
+            showSlide(currentSlide);
+        }
+
+        // Auto-slide every second
+        setInterval(() => {
+            currentSlide++;
+            showSlide(currentSlide);
+        }, 1000); // 1000ms = 1 second
+    </script>
+
+</body>
 <!-- deberia ser slider esto -->
-<img style="margin-bottom: 21px;" src="../images/term 2/design studio ll/DSII veggie patch 2.jpg" alt="front" width="100%"/>
-<img style="margin-bottom: 21px;" src="../images/term 2/design studio ll/DSII veggie patch 1.jpg" alt="front" width="100%"/>
-<img style="margin-bottom: 21px;" src="../images/term 2/design studio ll/DSII veggie patch 4.jpg" alt="front" width="100%"/>
-<img style="margin-bottom: 21px;" src="../images/term 2/design studio ll/DSII veggie patch 5.jpg" alt="front" width="100%"/>
-<img style="margin-bottom: 21px;" src="../images/term 2/design studio ll/DSII veggie patch 3.jpg" alt="front" width="100%"/>
+<!-- <img style="margin-bottom: 21px;" src="../images/term 2/design studio ll/DSII veggie patch 2.jpg" alt="front" width="100%"/> -->
+<!-- <img style="margin-bottom: 21px;" src="../images/term 2/design studio ll/DSII veggie patch 1.jpg" alt="front" width="100%"/> -->
+<!-- <img style="margin-bottom: 21px;" src="../images/term 2/design studio ll/DSII veggie patch 4.jpg" alt="front" width="100%"/> -->
+<!-- <img style="margin-bottom: 21px;" src="../images/term 2/design studio ll/DSII veggie patch 5.jpg" alt="front" width="100%"/> -->
+<!-- <img style="margin-bottom: 21px;" src="../images/term 2/design studio ll/DSII veggie patch 3.jpg" alt="front" width="100%"/> -->
 
       <h2 style="margin-top: 21px; margin-bottom: 21px;">01_02_intervention_immersing</h2>
 
