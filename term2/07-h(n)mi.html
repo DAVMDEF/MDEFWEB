@@ -50,12 +50,192 @@
   </html>
   
 
+  <h1 style="margin-bottom: 30px;">07. h(n)mi</h1>
+
+  <img style="margin-bottom: 21px;" src="../" alt="front" width="100%"/>
+  
+  <h2 style="margin-bottom: 21px;">07.01. intro</h2>
+  
+  <p style="margin-bottom: 21px;">something something</p>
+  
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Multiple Image Sliders</title>
+      <style>
+          /* General slider styling */
+          .slider-container {
+              position: relative;
+              width: 100%;
+              max-width: 100%;
+              margin: 50px auto;
+              overflow: hidden;
+              border-radius: 0px;
+          }
+  
+          .slide {
+              display: none;
+              width: 100%;
+          }
+  
+          .active {
+              display: block;
+          }
+  
+          .arrow {
+              position: absolute;
+              top: 50%;
+              width: 30px;
+              height: 30px;
+              margin-top: -15px;
+              color: rgb(0, 0, 0);
+              font-size: 24px;
+              font-weight: lighter;
+              cursor: pointer;
+              user-select: none;
+              background-color: rgba(255, 255, 255, 0);
+              border-radius: 0%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              z-index: 10;
+          }
+  
+          .arrow.left {
+              left: 10px;
+          }
+          .arrow.right {
+              right: 10px;
+          }
+      </style>
+  </head>
   <body>
+  
+      <!-- First Slider (Top of Page) -->
+      <div class="slider-container" id="slider1">
+          <div class="arrow left" onclick="changeSlide(-1, 'slider1')">&#10094;</div>
+          <img src="../images/term 2/h(n)mi/hnmi1.jpg" class="slide active" alt="Image 1">
+          <img src="../images/term 2/h(n)mi/hnmi2.jpg" class="slide" alt="Image 2">
+          <img src="../images/term 2/h(n)mi/hnmi3.jpg" class="slide" alt="Image 3">
+          <img src="../images/term 2/h(n)mi/hnmi4.jpg" class="slide" alt="Image 4">
+          <img src="../images/term 2/h(n)mi/hnmi5.jpg" class="slide" alt="Image 5">
+          <img src="../images/term 2/h(n)mi/hnmi6.jpg" class="slide" alt="Image 6">
+          <div class="arrow right" onclick="changeSlide(1, 'slider1')">&#10095;</div>
+      </div>
+  
+      <!-- Some content to push the second slider further down -->
+      <div style="height: 0px; text-align: 0;">
+          <h2 style="margin-bottom: 21px;">07.02. slay-bitch-pose</h2>
+      </div>
+
+      
+      
+  
+      <!-- Second Slider (Further Down) -->
+      <div class="slider-container" id="slider2">
+          <div class="arrow left" onclick="changeSlide(-1, 'slider2')">&#10094;</div>
+          <img src="../" class="slide active" alt="Image 4">
+          <img src="../" class="slide" alt="Image 5">
+          <img src="../" class="slide" alt="Image 6">
+          <div class="arrow right" onclick="changeSlide(1, 'slider2')">&#10095;</div>
+      </div>
+  
+      <script>
+          function startSlider(sliderId) {
+              let currentSlide = 0;
+              const slides = document.querySelectorAll(`#${sliderId} .slide`);
+  
+              function showSlide(index) {
+                  if (index >= slides.length) currentSlide = 0;
+                  if (index < 0) currentSlide = slides.length - 1;
+  
+                  slides.forEach(slide => slide.classList.remove("active"));
+                  slides[currentSlide].classList.add("active");
+              }
+  
+              function changeSlide(direction) {
+                  currentSlide += direction;
+                  showSlide(currentSlide);
+              }
+  
+              // Auto-slide every 1 second
+              let slideInterval = setInterval(() => {
+                  currentSlide++;
+                  showSlide(currentSlide);
+              }, 1000);
+  
+              // Pause on hover
+              const sliderContainer = document.getElementById(sliderId);
+              sliderContainer.addEventListener("mouseenter", () => clearInterval(slideInterval));
+              sliderContainer.addEventListener("mouseleave", () => {
+                  slideInterval = setInterval(() => {
+                      currentSlide++;
+                      showSlide(currentSlide);
+                  }, 1000);
+              });
+  
+              // Attach manual navigation function
+              window.changeSlide = (direction, targetSlider) => {
+                  if (targetSlider === sliderId) {
+                      changeSlide(direction);
+                  }
+              };
+          }
+  
+          // ✅ Use Intersection Observer to start sliders only when they appear
+          const observer = new IntersectionObserver((entries) => {
+              entries.forEach(entry => {
+                  if (entry.isIntersecting) {
+                      const sliderId = entry.target.id;
+                      startSlider(sliderId);
+                      observer.unobserve(entry.target); // Stop observing after starting
+                  }
+              });
+          }, { threshold: 0.5 });
+  
+          // Observe both sliders
+          document.querySelectorAll('.slider-container').forEach(slider => observer.observe(slider));
+      </script>
+  
+  </body>
+  </html>
+  </div>
+  
+  
+  <p>reflection:<br>
+  <br>
+  
+  </p>
+  
+  
+  <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <title>Resized GIF Example</title>
+        <style>
+          .gif-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            background-color: #ffffff;
+          }
+      
+          .gif-container img {
+            width: 90%; /* Resize width */
+            height: auto; /* Maintain aspect ratio */
+          }
+        </style>
+      </head>
+      <body>
+      
+        <div class="gif-container">
+          <img src="../images/term 2/h(n)mi/hnmi gif.gif" alt="Resized GIF">
+        </div>
+      
+      </body>
+      </html>
     
-    <div class="content">
-
-      <h1 style="margin-bottom: 30px;">07. h(n)mi</h1>
-
-      <img src="../images/term 1/landing/landing 1.jpg" alt="front" width="100%"/>
-
-     
