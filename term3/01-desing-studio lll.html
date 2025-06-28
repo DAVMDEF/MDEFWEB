@@ -169,8 +169,74 @@
 
 
 
+<body>
 
+    <!-- First Slider (Top of Page) -->
+    <div class="slider-container" id="slider1">
+        <div class="arrow left" onclick="changeSlide(-1, 'slider1')">&#10094;</div>
+        <img src="../images/term 3/uha 2.jpg" class="slide active" alt="Image 1">
+        <img src="../images/term 3/uha 3.jpg" class="slide" alt="Image 2">
+        <img src="../images/term 3/uha 4.jpg" class="slide" alt="Image 3">
+        <div class="arrow right" onclick="changeSlide(1, 'slider1')">&#10095;</div>
+    </div>
+</body>
 
+<script>
+    function startSlider(sliderId) {
+        let currentSlide = 0;
+        const slides = document.querySelectorAll(`#${sliderId} .slide`);
+
+        function showSlide(index) {
+            if (index >= slides.length) currentSlide = 0;
+            if (index < 0) currentSlide = slides.length - 1;
+
+            slides.forEach(slide => slide.classList.remove("active"));
+            slides[currentSlide].classList.add("active");
+        }
+
+        function changeSlide(direction) {
+            currentSlide += direction;
+            showSlide(currentSlide);
+        }
+
+        // Auto-slide every 1 second
+        let slideInterval = setInterval(() => {
+            currentSlide++;
+            showSlide(currentSlide);
+        }, 1000);
+
+        // Pause on hover
+        const sliderContainer = document.getElementById(sliderId);
+        sliderContainer.addEventListener("mouseenter", () => clearInterval(slideInterval));
+        sliderContainer.addEventListener("mouseleave", () => {
+            slideInterval = setInterval(() => {
+                currentSlide++;
+                showSlide(currentSlide);
+            }, 1000);
+        });
+
+        // Attach manual navigation function
+        window.changeSlide = (direction, targetSlider) => {
+            if (targetSlider === sliderId) {
+                changeSlide(direction);
+            }
+        };
+    }
+
+    // ✅ Use Intersection Observer to start sliders only when they appear
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const sliderId = entry.target.id;
+                startSlider(sliderId);
+                observer.unobserve(entry.target); // Stop observing after starting
+            }
+        });
+    }, { threshold: 0.5 });
+
+    // Observe both sliders
+    document.querySelectorAll('.slider-container').forEach(slider => observer.observe(slider));
+</script>
 
 
 
