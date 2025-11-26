@@ -1,123 +1,673 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Github Pages">
-    <meta name="description" content="MDEF documentation site for Your Name">
-    <title>Your name - MDEF</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="images/favicon.svg">
-  </head>
-
-  <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sliding Hamburger Menu</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Informal Urban Space Activation Studio</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-light: #111827;
+      --accent: #22c55e;
+      --accent-soft: rgba(34, 197, 94, 0.15);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #1f2933;
+      --error: #ef4444;
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.45);
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --radius-pill: 999px;
+    }
 
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1f2937 0, #020617 60%);
+      color: var(--text);
+      line-height: 1.5;
+      min-height: 100vh;
+      padding: 24px 16px 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 980px;
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 32px;
+      margin-bottom: 32px;
+      align-items: center;
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .hero-left {
+      padding: 24px 20px 24px 4px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.25);
+    }
+
+    h1 {
+      font-size: clamp(28px, 3vw + 12px, 38px);
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+
+    h1 span {
+      color: var(--accent);
+    }
+
+    .subheadline {
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 34rem;
+      margin-bottom: 18px;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .badge {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(55, 65, 81, 0.8);
+      color: var(--muted);
+    }
+
+    .hero-note {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* Card layout (right side) */
+    .hero-right {
+      background: linear-gradient(140deg, #020617 0, #020617 40%, #020617 100%);
+      border-radius: var(--radius-lg);
+      padding: 22px 20px 20px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
+    .section-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .section-subtitle {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    /* Checkboxes list */
+    .checklist {
+      list-style: none;
+      margin-bottom: 16px;
+    }
+
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 13px;
+      padding: 7px 9px;
+      border-radius: 10px;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(31, 41, 55, 0.8);
+      margin-bottom: 6px;
+    }
+
+    .check-icon {
+      margin-top: 2px;
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+      border: 1px solid rgba(75, 85, 99, 0.9);
+      background: radial-gradient(circle at 30% 30%, #1e293b, #020617);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 11px;
+      flex-shrink: 0;
+    }
+
+    .micro-cta {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    /* Offer section inside card */
+    .offer-box {
+      margin-top: 8px;
+      margin-bottom: 18px;
+      padding: 10px 10px 10px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: radial-gradient(circle at top left, #111827 0, #020617 65%);
+    }
+
+    .offer-list {
+      list-style: none;
+      font-size: 13px;
+      color: var(--muted);
+      display: grid;
+      gap: 6px;
+    }
+
+    .offer-list li::before {
+      content: "•";
+      color: var(--accent);
+      margin-right: 6px;
+    }
+
+    .before-after {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .ba-card {
+      border-radius: 11px;
+      padding: 10px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: radial-gradient(circle at top, #020617 0, #020617 60%);
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .ba-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #9ca3af;
+      margin-bottom: 4px;
+    }
+
+    .ba-tag {
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 10px;
+      padding: 2px 6px;
+      border-radius: 999px;
+      border: 1px solid rgba(75, 85, 99, 0.8);
+      color: #9ca3af;
+    }
+
+    /* Form */
+    form {
+      margin-top: 6px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .field-group {
+      display: grid;
+      gap: 4px;
+      font-size: 12px;
+    }
+
+    label {
+      color: #d1d5db;
+      font-size: 12px;
+    }
+
+    select,
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      border-radius: 9px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--text);
+      font-size: 13px;
+      padding: 7px 9px;
+      outline: none;
+    }
+
+    select:focus,
+    input:focus,
+    textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.6);
+    }
+
+    textarea {
+      min-height: 60px;
+      resize: vertical;
+    }
+
+    .inline-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .chip {
+      border-radius: 999px;
+      padding: 4px 9px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      font-size: 11px;
+      color: var(--muted);
+      background: rgba(15, 23, 42, 0.8);
+      cursor: pointer;
+    }
+
+    .chip input {
+      display: none;
+    }
+
+    .chip.selected {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+      color: #bbf7d0;
+    }
+
+    .muted {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .btn-primary {
+      border: none;
+      border-radius: var(--radius-pill);
+      padding: 9px 14px;
+      font-size: 13px;
+      font-weight: 500;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      color: #022c22;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      box-shadow: 0 12px 24px rgba(34, 197, 94, 0.35);
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.04);
+      transform: translateY(-1px);
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
+      box-shadow: 0 8px 18px rgba(34, 197, 94, 0.35);
+    }
+
+    .cta-row small {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    /* Footer-ish section */
+    .info-strip {
+      margin-top: 18px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px dashed rgba(75, 85, 99, 0.9);
+      background: rgba(15, 23, 42, 0.85);
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .info-strip strong {
+      color: #e5e7eb;
+    }
+  </style>
+</head>
 <body>
+  <main class="page">
+    <section class="hero">
+      <!-- Left: headline and context -->
+      <div class="hero-left">
+        <div class="pill">
+          <span class="pill-dot"></span>
+          Informal Urban Space Activation Studio
+        </div>
+        <h1>
+          Turn neglected <span>urban spaces</span> into vibrant community places
+        </h1>
+        <p class="subheadline">
+          A fast, low-cost way for cities, NGOs and communities to activate vacant lots,
+          leftover corners and informal spaces together with local people.
+        </p>
 
-    <!-- Menu Container for both icon and menu -->
-    <div class="menu-container">
-        <!-- Hamburger Icon -->
-        <div class="menu-icon" id="menuIcon">
-            &#9776; <!-- Hamburger icon -->
+        <div class="badges">
+          <span class="badge">Vacant lots → community assets</span>
+          <span class="badge">4–8 week pilots</span>
+          <span class="badge">Co-designed with residents</span>
         </div>
 
-        <!-- Sliding Navbar -->
-        <div class="navbar" id="navMenu">
-            <div class="navbar-inner">
-                <a href="../index.html">home</a>
-                <a href="../about.html">about / work</a>
-                <a href="../term1/index.html">term 1</a>
-                <a href="../term2/index.html">term 2</a>
-                <a href="../term3/index.html">term 3</a>
-                <a href="y one.html">y one</a>
-                <a href="../master-thesis.html">master thesis</a>                
+        <p class="hero-note">
+          Use this page to see if the problem fits you and to tell us about one space you’d
+          like to transform.
+        </p>
+      </div>
+
+      <!-- Right: problem check + offer + form -->
+      <div class="hero-right">
+        <!-- Step 1: Check the problem -->
+        <div>
+          <h2 class="section-title">Is this your situation?</h2>
+          <p class="section-subtitle">
+            Tick what applies to your city, organisation or neighbourhood.
+          </p>
+          <ul class="checklist">
+            <li>
+              <span class="check-icon">✓</span>
+              <span>We have vacant or underused spaces that attract trash, crime or complaints.</span>
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              <span>We lack time or internal capacity to run community-led projects in these spaces.</span>
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              <span>We have some funding, but no simple “plug-and-play” activation model.</span>
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              <span>We want visible, low-cost wins that show impact within 3–12 months.</span>
+            </li>
+          </ul>
+          <p class="micro-cta">
+            If you mentally checked at least one, this studio is likely relevant to you.
+          </p>
+        </div>
+
+        <!-- Step 2 & 3: Offer explanation + form -->
+        <div class="offer-box">
+          <h3 class="section-title">What this studio does</h3>
+          <ul class="offer-list">
+            <li>Identify one priority site with you (vacant lot, informal corner, or underused public space).</li>
+            <li>Co‑design a simple activation with local people (micro‑park, market, sport or learning area).</li>
+            <li>Support a quick pilot (4–8 weeks) and basic before/after results for funders and citizens.</li>
+          </ul>
+
+          <div class="before-after">
+            <div class="ba-card">
+              <div class="ba-label">Today</div>
+              <p>Fenced, empty, unsafe, often a source of complaints.</p>
+              <span class="ba-tag">“No-man’s-land”</span>
             </div>
+            <div class="ba-card">
+              <div class="ba-label">After</div>
+              <p>Lit, used and cared for, hosting everyday community life.</p>
+              <span class="ba-tag">Community hub</span>
+            </div>
+          </div>
         </div>
-    </div>
 
+        <form>
+          <!-- Role -->
+          <div class="field-group">
+            <label for="role">Your role</label>
+            <select id="role" name="role" required>
+              <option value="">Select one</option>
+              <option value="city">City / municipality</option>
+              <option value="ngo">NGO / community organisation</option>
+              <option value="developer">Developer / housing provider</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <!-- City / country -->
+          <div class="field-group">
+            <label for="location">City and country</label>
+            <input
+              type="text"
+              id="location"
+              name="location"
+              placeholder="e.g. Nairobi, Kenya"
+              required
+            />
+          </div>
+
+          <!-- Space type -->
+          <div class="field-group">
+            <label>What kind of space?</label>
+            <div class="inline-options" id="space-type-group">
+              <label class="chip">
+                <input type="checkbox" name="spaceType" value="vacant-lot" />
+                Vacant lot
+              </label>
+              <label class="chip">
+                <input type="checkbox" name="spaceType" value="underused-park" />
+                Underused park / square
+              </label>
+              <label class="chip">
+                <input type="checkbox" name="spaceType" value="edge-informal" />
+                Edge of an informal settlement
+              </label>
+              <label class="chip">
+                <input type="checkbox" name="spaceType" value="other" />
+                Other
+              </label>
+            </div>
+          </div>
+
+          <!-- Biggest problem -->
+          <div class="field-group">
+            <label>Biggest problem today</label>
+            <div class="inline-options" id="problem-group">
+              <label class="chip">
+                <input type="radio" name="problem" value="safety" />
+                Safety / crime
+              </label>
+              <label class="chip">
+                <input type="radio" name="problem" value="trash" />
+                Trash / poor image
+              </label>
+              <label class="chip">
+                <input type="radio" name="problem" value="underuse" />
+                Underuse / complaints
+              </label>
+              <label class="chip">
+                <input type="radio" name="problem" value="need-space" />
+                Need space for community / informal economy
+              </label>
+            </div>
+          </div>
+
+          <!-- Good transformation -->
+          <div class="field-group">
+            <label for="good-look">What would a “good transformation” look like for you?</label>
+            <textarea
+              id="good-look"
+              name="goodLook"
+              placeholder="Describe in 2–3 sentences."
+            ></textarea>
+          </div>
+
+          <!-- Budget / timeframe -->
+          <div class="field-group">
+            <label>Budget and timeframe</label>
+            <div class="inline-options" id="budget-group">
+              <label class="chip">
+                <input type="radio" name="budget" value="0-6" />
+                Budget in next 6 months
+              </label>
+              <label class="chip">
+                <input type="radio" name="budget" value="6-12" />
+                Budget in 6–12 months
+              </label>
+              <label class="chip">
+                <input type="radio" name="budget" value="exploring" />
+                No budget yet, exploring options
+              </label>
+            </div>
+          </div>
+
+          <!-- Willingness to pilot -->
+          <div class="field-group">
+            <label>Would you consider a small pilot on one site with external support?</label>
+            <div class="inline-options" id="pilot-group">
+              <label class="chip">
+                <input type="radio" name="pilot" value="yes" />
+                Yes
+              </label>
+              <label class="chip">
+                <input type="radio" name="pilot" value="maybe" />
+                Maybe
+              </label>
+              <label class="chip">
+                <input type="radio" name="pilot" value="no" />
+                No
+              </label>
+            </div>
+          </div>
+
+          <!-- Contact -->
+          <div class="field-group">
+            <label for="name">Your name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Full name"
+              required
+            />
+          </div>
+
+          <div class="field-group">
+            <label for="org">Organisation</label>
+            <input
+              type="text"
+              id="org"
+              name="org"
+              placeholder="City dept., NGO, company…"
+            />
+          </div>
+
+          <div class="field-group">
+            <label for="email">Work email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@organisation.org"
+              required
+            />
+          </div>
+
+          <div class="cta-row">
+            <button type="submit" class="btn-primary">
+              Get a free mini‑assessment
+              <span>→</span>
+            </button>
+            <small>
+              After you submit, you’ll receive a short mini‑assessment of your space idea,
+              a suggested pilot concept and rough cost range, plus an option for a
+              30‑minute call.
+            </small>
+          </div>
+        </form>
+
+        <div class="info-strip">
+          <strong>Not ready to submit?</strong> You can still use this page as a
+          quick checklist to clarify whether activating an informal or vacant space
+          should be a priority in your context.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Simple chip selection styling
+    function setupChipGroup(groupId, isMulti) {
+      const group = document.getElementById(groupId);
+      if (!group) return;
+
+      group.addEventListener("click", function (e) {
+        const chip = e.target.closest(".chip");
+        if (!chip) return;
+
+        const input = chip.querySelector("input");
+        if (!input) return;
+
+        if (input.type === "checkbox") {
+          input.checked = !input.checked;
+          chip.classList.toggle("selected", input.checked);
+        } else if (input.type === "radio") {
+          // clear others
+          group.querySelectorAll(".chip").forEach((c) => {
+            const i = c.querySelector("input");
+            if (i && i.type === "radio") {
+              c.classList.toggle("selected", i === input);
+            }
+          });
+          input.checked = true;
+        }
+      });
+    }
+
+    setupChipGroup("space-type-group", true);
+    setupChipGroup("problem-group", false);
+    setupChipGroup("budget-group", false);
+    setupChipGroup("pilot-group", false);
+
+    // Prevent real submission for now; you can adapt to your backend later.
+    document.querySelector("form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Thanks! Your interest in activating an informal space has been recorded.");
+      // Replace this with your actual submission logic (e.g., fetch to API or form service).
+    });
+  </script>
 </body>
-</html>
-
-
-  <body>
-   
-    <div class="content">
-
-      <h1>My Master Thesis example</h1>
-
-      <p>This is where I will start defining my Master Thesis idea and start to get use to the documentation process.</p>
-
-      <h2>Research</h2>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p
-
-      <quote>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</quote>
-
-      <h2>2D and 3D Modeling</h2>
-      
-      <p>Add here your modeling and design.</p>
-
-      <h2>Some other section</h2>
-
-      <p>This is an updated text.</p>
-
-      <hr />
-
-      <h2>Materials</h2>
-
-      <table border="1">
-        <thead>
-          <tr>
-            <th>Qty</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th>Link</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Material one </td>
-            <td>22.00 $</td>
-            <td>https://amazon.com/testoe</td>
-            <td>Order many</td>
-          </tr>
-          <tr>
-            <td>Material two </td>
-            <td>22.00 $</td>
-            <td>https://amazon.com/testoe</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Material three </td>
-            <td>22.00 $</td>
-            <td>https://amazon.com/testoe</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Material four </td>
-            <td>22.00 $</td>
-            <td>https://amazon.com/testoe</td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-
-    </div>
-
-    <footer>
-      <p>Copyright 2023 &#60;Your name&#62; - Creative Commons Attribution Non Commercial </p>
-      <p>Source code hosted at <a href="{{repo_url}}">{{repo_name}}</a></p>
-    </footer> 
-
-  </body>
 </html>
