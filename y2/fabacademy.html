@@ -79,13 +79,13 @@ The overall intention of these classes will be to gain a basic understanding of 
 
       <h2 style="margin-bottom: 21px;margin-top: 21px;">electronics production</h2>
       <p> 
-        <img style="margin-bottom: 21px;" src="../images/y2/term 2/fabac3.png" alt="front" width="100%"/>
+        <img style="margin-bottom: 21px;" src="../images/y2/term 2/fabacpreview.png" alt="front" width="100%"/>
       </p> 
       
       
-<h1 style="margin-bottom: 21px;">Machine Design — Extruder Add-On Shaping Module</h1>
+<h2 style="margin-bottom: 21px;">machine design</h2>
 
-<h2 style="margin-bottom: 21px;">Project Overview</h2>
+<h3 style="margin-bottom: 21px;">extruder add-on shaping module</h3>
 
 <p> This group project builds on top of an existing plastic extruder already present in the lab.
 
@@ -95,7 +95,7 @@ The direction we selected was a **post-extrusion shaping module** placed after t
 
 ---
 
-<h2 style="margin-bottom: 21px;">What We Started From</h2>
+<h3 style="margin-bottom: 21px;">starting point</h3>
 
 <p style="margin-bottom: 21px;">Our first team discussion focused on defining the kind of machine we wanted to build.<br>
 <br>
@@ -110,7 +110,7 @@ Based on those criteria, we decided to work on top of an existing plastic extrud
 <br>
 The extruder is based on the **Lyman extruder**, an open-source filament extruder. The machine had originally been built years earlier by previous Fab Lab members and was later recovered by Max, who reorganized the system and rebuilt it as a working bench-top setup.<br>
 <br>
-![Recovered extruder setup](../images/week12/extruder_bench_setup.webp)  
+<img style="margin-bottom: 9px;" src="../images/y2/term 2/machine design/extruder_bench_setup.webp" alt="front" width="100%"/>
 
 *Recovered Lyman-based plastic extruder mounted on a wooden bench base. 
 This existing machine became the starting platform for the group project.*</p>
@@ -118,7 +118,7 @@ This existing machine became the starting platform for the group project.*</p>
 
 ---
 
-<h2 style="margin-bottom: 21px;">What We Decided</h2>
+<h3 style="margin-bottom: 21px;">What We Decided</h3>
 
 <p style="margin-bottom: 21px;">Once the starting conditions were clear, we froze the project direction:<br>
 <br>
@@ -138,27 +138,29 @@ This mechanism was intended to:<br>
 
 ---
 
-<h2 style="margin-bottom: 21px;">What We Built — Mechanical Development</h2>
+<h3 style="margin-bottom: 21px;">What We Built — Mechanical Development</h3>
 
-<h3 style="margin-bottom: 21px;">Linear Axis Structure</h3>
+<h3 style="margin-bottom: 21px;">linear axis structure</h3>
 
-<p>The first mechanical subsystem developed was the linear axis.
+<p>The first mechanical subsystem developed was the linear axis.<br>
+<br>
 
-This assembly included:
+This assembly included:<br>
+<br>  
+- aluminum profile structure  <br>
+- moving carriage  <br>
+- belt transmission  <br>
+- endstop switches  <br>
+- stepper-driven motion base<br>  
+<br>
+<img style="margin-bottom: 9px;" src="../images/y2/term 2/machine design/linear_carriage_reference.webp" alt="front" width="100%"/>
 
-- aluminum profile structure  
-- moving carriage  
-- belt transmission  
-- endstop switches  
-- stepper-driven motion base  
-
-![Linear axis top view](../images/week12/linear_carriage_reference.webp)  
 
 *Top view of the first linear axis assembly, including carriage plate, guide rails, belt path, and limit switches.*
 </p>
 ---
 
-<h3 style="margin-bottom: 21px;">Manual Motion Test</h3>
+<h3 style="margin-bottom: 21px;">manual motion test</h3>
 
 <p style="margin-bottom: 21px;">Before adding full actuation, we manually moved the mechanism to verify the basic behavior of the axis.<br>
 <br>
@@ -169,17 +171,10 @@ This test was used to check:<br>
 - friction and play<br>  
 - general mechanical feasibility<br>  
 <br>
-
-
-[▶ Watch video](../images/week12/video_manual_motion_test.mp4)
-
-
-
-*Manual motion test of the linear mechanism. This test was used to verify travel, smoothness, alignment, and the basic behavior of the axis before motorized control.*
 </p>
 ---
 
-<h3 style="margin-bottom: 21px;">Motor Mount Design</h3>
+<h3 style="margin-bottom: 21px;">motor mount design</h3>
 
 <p style="margin-bottom: 21px;">To integrate the motor properly into the structure, a dedicated motor mount was designed.<br>
 <br>
@@ -190,37 +185,39 @@ The part was intended to provide:<br>
 - fastening points for assembly<br>  
 - compatibility with the rest of the structure<br>  
 
-![Motor mount perspective](../images/week12/motor_mount_perspective.webp)  
+<img style="margin-bottom: 9px;" src="../images/y2/term 2/machine design/motor_mount_perspective.webp" alt="front" width="100%"/>
+  
 
 *Perspective view of the motor mount CAD model.*
 
-![Motor mount front](../images/week12/motor_mount_front.webp)  
+<img style="margin-bottom: 9px;" src="../images/y2/term 2/machine design/motor_mount_front.webp" alt="front" width="100%"/>
+ 
 
 *Front view showing the main openings and slotted fastening holes.*
 
-![Motor mount bottom](../images/week12/motor_mount_bottom.webp)  
+<img style="margin-bottom: 9px;" src="../images/y2/term 2/machine design/motor_mount_bottom.webp" alt="front" width="100%"/>
 
 *Bottom view showing the folded base geometry and mounting holes.*
 </p>
 ---
 
-<h3 style="margin-bottom: 21px;">Fabricated Motor Mount</h3>
+<h3 style="margin-bottom: 21px;">fabricated motor mount</h3>
 
 <p style="margin-bottom: 21px;">After the CAD design was defined, the motor mount was fabricated and checked physically against the structure.<br>
 <br>This step was important to verify that the part fit correctly, aligned with the transmission, and could be integrated into the existing structure without issues. It also helped confirm that the design was ready for motor installation and that the motor could be mounted securely for operation.<br>
 <br>
-![Fabricated motor mount plate](../images/week12/motor_mount_plate.webp)  
+<img style="margin-bottom: 9px;" src="../images/y2/term 2/machine design/motor_mount_plate.webp" alt="front" width="100%"/>
 
 *Fabricated motor mount plate produced from the CAD design and prepared for integration with the linear axis.*<br>
 <br>
 
-![Motor mount integrated on axis](../images/week12/motor_mount_on_linear_axis.webp)  
+<img style="margin-bottom: 9px;" src="../images/y2/term 2/machine design/motor_mount_on_linear_axis.webp" alt="front" width="100%"/>
 
 *Motor mount installed on the axis structure to verify fit, alignment, and integration with the moving system.*
 </p>
 ---
 
-<h3 style="margin-bottom: 21px;">Rotary Shaping Module</h3>
+<h3 style="margin-bottom: 21px;">rotary shaping module</h3>
 
 <p style="margin-bottom: 21px;">In parallel with the axis development, the shaping mechanism itself was developed as a rotary subsystem.<br>
 <br>
@@ -232,17 +229,17 @@ This module included:<br>
 - belt transmission<br>  
 - rotating output wheel<br>  
 <br>
-![Rotary module front](../images/week12/belt_drive_rotary_module_front.webp)  
+<img style="margin-bottom: 9px;" src="../images/y2/term 2/machine design/belt_drive_rotary_module_front.webp" alt="front" width="100%"/>
 
 *Front view of the rotary shaping module, including stepper motor, pulley system, and belt transmission.*
 
-![Rotary module side](../images/week12/belt_drive_rotary_module_side.webp)  
+<img style="margin-bottom: 9px;" src="../images/y2/term 2/machine design/belt_drive_rotary_module_side.webp" alt="front" width="100%"/>
 
 *Side view of the rotary shaping module showing the relationship between motor, transmission, and output wheel.*
 </p>
 ---
 
-<h3 style="margin-bottom: 21px;">We Controlled It — Electronics and Control</h3>
+<h3 style="margin-bottom: 21px;">controlling the machine — electronics and control</h3>
 
 <p style="margin-bottom: 21px;"></p>To actuate the machine, we assembled a small control system around a microcontroller, driver modules, and power regulation.<br>
 <br>
@@ -254,25 +251,25 @@ The electronics work focused on:<br>
 - preparing the machine for automated motion<br>  
 </p>
 
-![Initial controller board](../images/week12/stepper_driver_controller_board.webp)  
+<img style="margin-bottom: 9px;" src="../images/y2/term 2/machine design/stepper_driver_controller_board.webp" alt="front" width="100%"/>
 
 *Initial control board assembly used to interface the microcontroller, driver, and power electronics for the motion system.*
 
-![Control board close-up](../images/week12/motor_control_board_closeup.webp)  
-
+<img style="margin-bottom: 9px;" src="../images/y2/term 2/machine design/motor_control_board_closeup.webp" alt="front" width="100%"/>
+ 
 *Close-up of the control board with microcontroller, motor driver modules, power regulation, and terminal connections.*
 
-![Control board handheld](../images/week12/motor_control_board_handheld.webp)  
+<img style="margin-bottom: 9px;" src="../images/y2/term 2/machine design/motor_control_board_handheld.webp" alt="front" width="100%"/>
 
 *Handheld view of the assembled control board during testing and wiring checks.*
 
-![Control board wired](../images/week12/motor_control_board_wired.webp)  
+<img style="margin-bottom: 9px;" src="../images/y2/term 2/machine design/motor_control_board_wired.webp" alt="front" width="100%"/>
 
 *Control board connected and wired for operation, ready to drive the motion system and read the sensors.*
 
 ---
 
-<h3 style="margin-bottom: 21px;">Putting everything together</h3>
+<h3 style="margin-bottom: 21px;">assembling</h3>
 
 
 <p style="margin-bottom: 21px;">As the project moved forward, the different parts of the machine were laid out together on the worktable to review progress, check compatibility, and prepare for integration.<br>
@@ -286,112 +283,103 @@ This layout included:<br>
 - mounting hardware and small mechanical components<br>  
 - tools and materials still being used during assembly<br>  
 
-
-![Available parts and hardware](../images/week12/project_parts_layout.webp)  
+<img style="margin-bottom: 9px;" src="../images/y2/term 2/machine design/project_parts_layout.webp" alt="front" width="100%"/>
 
 *Workbench view of the project during development, showing the machine as a collection of evolving subassemblies and components before final integration.*
 </p>
 
-## How We Tested It
+<h3 style="margin-bottom: 21px;">testing it</h3>
 
-### First Motor Activation Test
-
-Once the electronics were connected, we tested the basic on/off behavior of the motor.
-
-This helped verify:
-
-- the controller was powering correctly  
-- the driver could actuate the motor  
-- the signal path between board and motor was working  
-- the machine could move under powered control  
-
-
-[▶ Watch video](../images/week12/video_motor_on_off_test.mp4)
-
-*Initial motor activation test used to confirm the electronics, driver, and actuation system could power the mechanism reliably.*
+<p> First Motor Activation Test </p><br>
+<br>
+Once the electronics were connected, we tested the basic on/off behavior of the motor.<br>
+<br>
+This helped verify:<br>
+<br>
+- the controller was powering correctly  <br>
+- the driver could actuate the motor<br>
+- the signal path between board and motor was working<br>
+- the machine could move under powered control  <br>
+<br>  
 
 
-At this stage, the system included the structural axis, carriage, transmission, and endstop switches needed for positional reference.
+At this stage, the system included the structural axis, carriage, transmission, and endstop switches needed for positional reference.<br>
+<br>
 
----
+<h3 style="margin-bottom: 21px;">homing sequence test</h3>
 
-### Homing Sequence Test
+After confirming powered motion, we tested the homing sequence.<br>
+<br>  
+This was an important milestone because it showed that the machine could:<br> 
+<br> 
+- move automatically toward a known reference  <br>
+- detect the endstop correctly  <br>  
+- stop at a repeatable point  <br>
+- establish a zero position for automated operation<br>
 
-After confirming powered motion, we tested the homing sequence.
+<h3 style="margin-bottom: 21px;">Post-Extrusion Material Test</h3>  
 
-This was an important milestone because it showed that the machine could:
+To define the shaping mechanism, we observed the material directly at the extruder output.<br>
+<br>
+This early test focused on the moment when the plastic leaves the nozzle and is still soft and deformable.<br>
+<br>
+The goal was to understand:<br>
+<br>  
+- how the extruded material behaves immediately after exiting the nozzle  <br>
+- how much working time is available before it hardens  <br>
+- how the material can be guided or shaped during that transition phase  <br>
+- what type of post-extrusion mechanism can interact with it effectively  <br>
+<br>
+This test became an important turning point in the project because it linked the existing extruder to the new machine concept through direct observation of the material itself. <br>
+<br>
+It gave us a way better understanding of what the shaping add-on mechanism looked like as after the extrusion output.<br>
 
-- move automatically toward a known reference  
-- detect the endstop correctly  
-- stop at a repeatable point  
-- establish a zero position for automated operation  
+<img style="margin-bottom: 9px;" src="../images/y2/term 2/machine design/extrusion_shaping_0.jpeg" alt="front" width="100%"/>
 
-[▶ Watch video](../images/week12/video_homing_sequence.mp4)
-
-*Automated homing sequence of the machine. The carriage moves toward the limit switch, detects a known reference position, and establishes a repeatable zero point for operation.*
-
----
-
-### Post-Extrusion Material Test
-
-To define the shaping mechanism, we observed the material directly at the extruder output.
-
-This early test focused on the moment when the plastic leaves the nozzle and is still soft and deformable.
-
-The goal was to understand:
-
-- how the extruded material behaves immediately after exiting the nozzle  
-- how much working time is available before it hardens  
-- how the material can be guided or shaped during that transition phase  
-- what type of post-extrusion mechanism can interact with it effectively  
-
-This test became an important turning point in the project because it linked the existing extruder to the new machine concept through direct observation of the material itself. 
-
-It gave us a way better understanding of what the shaping add-on mechanism looked like as after the extrusion output.
-
-
-![Extrusion test](../images/week12/extrusion_shaping_1.jpeg)  
 
 *Initial post-extrusion test showing the material as it leaves the nozzle and is manually guided while still soft. 
 
-![Extrusion test](../images/week12/extrusion_shaping_0.jpeg)  
+<img style="margin-bottom: 9px;" src="../images/y2/term 2/machine design/extrusion_shaping_1.jpeg" alt="front" width="100%"/> 
+
 
 This observation helped define the need for a shaping mechanism positioned after the extruder output.*
 
 ---
 
-## Control Interface
+<h3 style="margin-bottom: 21px;">control interface</h3>
 
-To operate the prototype as one coordinated system, we developed a custom control interface that combines extrusion and motion settings in one place.
+To operate the prototype as one coordinated system, we developed a custom control interface that combines extrusion and motion settings in one place.<br>
+<br>
+The interface includes:<br>
+<br>
+- machine start and stop actions  <br>  
+- temperature control for the extruder  <br>
+- joystick-based motion input  <br>
+- control of linear movement and rotation <br>  
+- a simple operator view for testing and adjustment <br>  
+<br>
+This made it possible to manage the system as a single machine rather than as separate subsystems.<br>
+<br>
+<img style="margin-bottom: 9px;" src="../images/y2/term 2/machine design/control_interfase.png" alt="front" width="100%"/>
 
-The interface includes:
-
-- machine start and stop actions  
-- temperature control for the extruder  
-- joystick-based motion input  
-- control of linear movement and rotation  
-- a simple operator view for testing and adjustment  
-
-This made it possible to manage the system as a single machine rather than as separate subsystems.
-
-![Control interface](../images/week12/control_interfase.png)  
 
 *Custom interface used to manage temperature, movement, and rotation across the system.*
 
 ---
 
-## Material Source
+<h3 style="margin-bottom: 21px;">material source</h3> 
 
-For the shaping tests, we used shredded blue plastic from failed Smart Citizen enclosure prints.
+For the shaping tests, we used shredded blue plastic from failed Smart Citizen enclosure prints.<br>
+<br>  
 
-Instead of discarding these bad prints, the material was recovered, processed into feedstock, and reused in the extruder. This connected the circularity of the project not only to the machine itself, but also to the plastic being tested.
-
+Instead of discarding these bad prints, the material was recovered, processed into feedstock, and reused in the extruder. This connected the circularity of the project not only to the machine itself, but also to the plastic being tested.<br>
+<br>  
 ---
 
-## Early Shaped Output
+<h3 style="margin-bottom: 21px;">early shaped output</h3>
 
-The first shaping tests produced blue spiral samples from recycled plastic.
-
+The first shaping tests produced blue spiral samples from recycled plastic.<br>
+<br>  
 These outputs showed that the system could move the shaping rod along the axis while rotating it, preventing material buildup near the nozzle and forming the extrusion into a controlled coil. Although still experimental, these first samples validated the core idea behind the machine.
 
 ![Early shaped output](../images/week12/springs.jpeg)  
