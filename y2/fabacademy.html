@@ -130,6 +130,30 @@ A multimeter is used to measure voltage, resistance, and current, and it’s esp
       <p> The second assignment was to produce the board that we designed in the previous assignment.<br>
         <br>
          The production process was set to be done in the lab using a milling machine and a soldering station. The final result was supposed to be a functional board that could be used to control a set of LEDs. </p>
+<br>
+         To make a simple ATtiny412‑based task timer it was only necessary to add a few interface parts to the existing board.<br>
+<br>
+         New components required<br>
+         <br>
+Already in the design: ATtiny412, 5 V input, decoupling cap, 1 push‑button with pull‑down, 1 LED with series resistor, UPDI header, and an expansion header.
+<br>
+Missing components:
+<br>
+Piezo buzzer (active, 5 V, through‑hole or SMD)<br>
+Type: small active buzzer that beeps when powered (no waveform generation required in firmware).<br>
+Connection:<br>
+Positive pin → free ATtiny412 I/O pin on expansion header (e.g. PA6) via a series resistor (e.g. 100 Ω) or directly if current is within the pin’s drive limit.<br>
+Negative pin → GND.<br>
+Function: gives an audible beep at start/stop, intervals, and end of timer.<br>
+<br>
+Second user button<br>
+Type: momentary push button, same footprint as your existing SW1.<br>
+Connection:<br>
+One side → 5 V.<br>
+Other side → free I/O pin (e.g. PA7).<br>
+10 kΩ resistor from that I/O pin to GND (same pull‑down scheme as your first button).<br>
+Function: lets you separate “start/stop” from “mode / set time” so the UX is clearer (for example: Button 1 cycles preset durations, Button 2 starts/stops the timer).<br>
+
    <br>
       <img style="margin-bottom: 21px;" src="../images/y2/term 2/elec production/pcb 3d.png" alt="front" width="100%"/>
      
